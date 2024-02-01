@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
-import Island from "../models/island";
+import Island from "../models/Island";
 import Bird from "../models/Bird";
 import Sky from "../models/Sky";
 import Plane from "../models/Plane";

@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
-import Loader from "./components/Loader";
-import Island from "./models/island";
-import Sky from "./models/Sky";
-import Bird from "./models/Bird";
-import Plane from "./models/Plane";
+import Island from "../models/island";
+import Bird from "../models/Bird";
+import Sky from "../models/Sky";
+import Plane from "../models/Plane";
+import Loader from "../components/Loader";
 
 function Home() {
   const [isRotating, setIsRotating] = useState(false);

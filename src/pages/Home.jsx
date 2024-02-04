@@ -1,17 +1,17 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
-import Island from "../models/island";
+import Island from "../models/Island";
 import Bird from "../models/Bird";
 import Sky from "../models/Sky";
 import Plane from "../models/Plane";
 import Loader from "../components/Loader";
+import HomeInfo from "../components/HomeInfo";
 
 function Home() {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState();
   const adjustPlaneForScreenSize = () => {
-    console.log("object");
     let screenScale = null;
     let screenPosition = null;
 
@@ -27,7 +27,6 @@ function Home() {
   };
 
   const adjustIslandForScreenSize = () => {
-    console.log("object");
     let screenScale = null;
     let screenPosition = null;
     let rotation = [0.1, 4.7, 0];
@@ -51,9 +50,9 @@ function Home() {
   return (
     <>
       <section className="w-full h-screen relative">
-        {/* <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-center">
-          Popup
-        </div> */}
+        <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-center">
+          {currentStage && <HomeInfo currentStage={currentStage} />}
+        </div>
         <Canvas
           className={`w-full h-screen bg-transparent ${
             isRotating ? "cursor-grabbing" : "cursor-grab"

@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
-import Island from "../models/Island";
 import Bird from "../models/Bird";
 import Sky from "../models/Sky";
 import Plane from "../models/Plane";
 import Loader from "../components/Loader";
 import HomeInfo from "../components/HomeInfo";
+import Island from "../models/Island";
 
 function Home() {
   const [isRotating, setIsRotating] = useState(false);
@@ -17,10 +17,10 @@ function Home() {
 
     if (window.innerWidth > 768) {
       screenScale = [2.5, 2.5, 2.5];
-      screenPosition = [0, -3, -2];
+      screenPosition = [0, -2.5, -2];
     } else {
       screenScale = [3.5, 3.5, 3.5];
-      screenPosition = [0, -4, -6];
+      screenPosition = [0, -3.5, -6];
     }
 
     return [screenScale, screenPosition];
@@ -50,7 +50,7 @@ function Home() {
   return (
     <>
       <section className="w-full h-screen relative">
-        <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-center">
+        <div className="absolute top-20 left-0 right-0 z-10 flex items-center justify-center">
           {currentStage && <HomeInfo currentStage={currentStage} />}
         </div>
         <Canvas

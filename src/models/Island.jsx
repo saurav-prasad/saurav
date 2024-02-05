@@ -3,13 +3,9 @@ import { useGLTF } from "@react-three/drei";
 import { a } from "@react-spring/three";
 import islandScene from "../assets/3d/island.glb";
 import { useFrame, useThree } from "@react-three/fiber";
+import isMobile from "../functions/isMobile";
 
-// Function to check if the user is on a mobile device
-function isMobile() {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
-}
+
 
 function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
   const { nodes, materials } = useGLTF(islandScene);
@@ -35,7 +31,7 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
 
   const handlePointerMove = (e) => {
     e.stopPropagation();
-    e.preventDefault();
+    e.preventDefault()
     if (isRotating) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       const delta = (clientX - lastX.current) / viewport.width;

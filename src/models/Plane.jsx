@@ -7,15 +7,8 @@ import isMobile from "../functions/isMobile";
 function Plane({ isRotating, ...props }) {
   const ref = useRef();
   const { scene, animations } = useGLTF(planeScene);
-  const  {actions}  = useAnimations(animations, ref);
-  //   useEffect(() => {
-  //     if (isRotating) {
-  //       actions["Take 001"].play();
-  //       console.log(actions);
-  //     } else {
-  //       actions["Take 001"].stop();
-  //     }
-  //   }, [actions, isRotating]);
+  const { actions } = useAnimations(animations, ref);
+
   useFrame((_, delta) => {
     if (isRotating) {
       actions["Take 001"].play();
@@ -23,6 +16,7 @@ function Plane({ isRotating, ...props }) {
       !isMobile() && actions["Take 001"].stop();
     }
   });
+
   return (
     <>
       <mesh {...props} ref={ref}>

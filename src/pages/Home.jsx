@@ -11,12 +11,13 @@ import Island from "../models/Island";
 function Home() {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState();
+
   const adjustPlaneForScreenSize = () => {
     let screenScale = null;
     let screenPosition = null;
 
     if (window.innerWidth > 768) {
-      screenScale = [2.5, 2.5, 2.5];
+      screenScale = [3, 3, 3];
       screenPosition = [0, -2.5, -2];
     } else {
       screenScale = [3.5, 3.5, 3.5];
@@ -60,7 +61,7 @@ function Home() {
           camera={{ near: 0.1, far: 1000 }}
         >
           <Suspense fallback={<Loader />}>
-            <directionalLight position={[1, 1, 1]} intensity={1} />
+            <directionalLight position={[1, 1, 1]} intensity={0.2} />
             <ambientLight intensity={0.8} />
             <hemisphereLight
               skyColor="#b1e1ff"

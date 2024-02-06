@@ -96,7 +96,7 @@ function Contact() {
             onBlur={onBlur}
             disabled={formLoading}
           >
-            {formLoading ? <span className="loader" /> : " Let's connect!"}
+            {formLoading ? <span className="BtnLoader" /> : " Let's connect!"}
           </button>
         </form>
       </div>

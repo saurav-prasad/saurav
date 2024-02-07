@@ -23,6 +23,7 @@ function Sky({ isRotating }) {
     if (isRotating) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       const delta = (clientX - lastX.current) / viewport.width;
+      skyRef.current.rotation.y += delta * 0.002 * Math.PI;
       lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
     }
@@ -30,13 +31,13 @@ function Sky({ isRotating }) {
 
   useFrame((_, delta) => {
     skyRef.current.rotation.y += 0.03 * delta;
-    if (isRotating) {
-      if (rotationSpeed.current >= 0) {
-        skyRef.current.rotation.y += 0.29 * delta;
-      } else {
-        skyRef.current.rotation.y -= 0.34 * delta;
-      }
-    }
+    // if (isRotating) {
+    //   if (rotationSpeed.current >= 0) {
+    //     skyRef.current.rotation.y += 0.29 * delta;
+    //   } else {
+    //     skyRef.current.rotation.y -= 0.34 * delta;
+    //   }
+    // }
   });
 
   useEffect(() => {

@@ -13,7 +13,7 @@ function Plane({ isRotating, ...props }) {
     if (isRotating) {
       actions["Take 001"].play();
     } else if (!isRotating) {
-      !isMobile() && actions["Take 001"].stop();
+      actions["Take 001"].stop();
     }
   });
 

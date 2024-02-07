@@ -17,6 +17,7 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(true);
+    console.log("down");
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     lastX.current = clientX;
   };
@@ -24,6 +25,7 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
   const handlePointerUP = (e) => {
     e.stopPropagation();
     e.preventDefault();
+    console.log("up");
     setIsRotating(false);
   };
 
@@ -36,9 +38,8 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
       lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
-      if (isMobile()) {
-        setIsRotating(false);
-      }
+      console.log("move");
+      // isMobile() && setIsRotating(false);
     }
   };
 
@@ -93,16 +94,16 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
 
     // Set the current stage based on the island's orientation
     switch (true) {
-      case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
+      case normalizedRotation >= 5.4 && normalizedRotation <= 5.85:
         setCurrentStage(4);
         break;
-      case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
+      case normalizedRotation >= 0.8 && normalizedRotation <= 1.3:
         setCurrentStage(3);
         break;
-      case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
+      case normalizedRotation >= 2.3 && normalizedRotation <= 2.6:
         setCurrentStage(2);
         break;
-      case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
+      case normalizedRotation >= 4.2 && normalizedRotation <= 4.75:
         setCurrentStage(1);
         break;
       default:
@@ -118,12 +119,18 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
     canvas.addEventListener("pointermove", handlePointerMove);
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
+    canvas.addEventListener("touchmove", handlePointerMove);
+    canvas.addEventListener("touchstart", handlePointerDown);
+    canvas.addEventListener("touchend", handlePointerUP);
     return () => {
       canvas.removeEventListener("pointerdown", handlePointerDown);
       canvas.removeEventListener("pointerup", handlePointerUP);
       canvas.removeEventListener("pointermove", handlePointerMove);
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
+      canvas.removeEventListener("touchmove", handlePointerMove);
+      canvas.removeEventListener("touchstart", handleKeyDown);
+      canvas.removeEventListener("touchend", handlePointerUP);
     };
   }, [gl, handlePointerDown, handlePointerMove, handlePointerUP]);
 

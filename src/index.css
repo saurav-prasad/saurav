@@ -67,7 +67,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .neo-btn {
-    @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
+    @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold w-fit -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
   }
 
   .cta {
@@ -191,29 +191,32 @@ body:has(.card[data-color="green"]:hover) {
   height: 25px;
   color: #fff;
 }
-  .BtnLoader:before,
-  .BtnLoader:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-    transform: rotateX(70deg);
-    animation: 1s spin1 linear infinite;
-  }
-  .BtnLoader:after {
-    color: #FF3D00;
-    transform: rotateY(70deg);
-    animation-delay: .4s;
-  }
+
+.BtnLoader:before,
+.BtnLoader:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin1 linear infinite;
+}
+
+.BtnLoader:after {
+  color: #FF3D00;
+  transform: rotateY(70deg);
+  animation-delay: .4s;
+}
 
 @keyframes rotate {
   0% {
     transform: translate(-50%, -50%) rotateZ(0deg);
   }
+
   100% {
     transform: translate(-50%, -50%) rotateZ(360deg);
   }
@@ -223,34 +226,43 @@ body:has(.card[data-color="green"]:hover) {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
   }
+
   100% {
     transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
 
 @keyframes spin1 {
+
   0%,
   100% {
     box-shadow: .2em 0px 0 0px currentcolor;
   }
+
   12% {
     box-shadow: .2em .2em 0 0 currentcolor;
   }
+
   25% {
     box-shadow: 0 .2em 0 0px currentcolor;
   }
+
   37% {
     box-shadow: -.2em .2em 0 0 currentcolor;
   }
+
   50% {
     box-shadow: -.2em 0 0 0 currentcolor;
   }
+
   62% {
     box-shadow: -.2em -.2em 0 0 currentcolor;
   }
+
   75% {
     box-shadow: 0px -.2em 0 0 currentcolor;
   }
+
   87% {
     box-shadow: .2em -.2em 0 0 currentcolor;
   }

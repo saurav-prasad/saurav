@@ -12,19 +12,19 @@ function Bird() {
 
   useFrame(({ clock, camera }) => {
     birdRef.current.position.y = Math.sin(clock.elapsedTime) * 0.2 + 2;
-    if (birdRef.current.position.x > camera.position.x + 10) {
+    if (birdRef.current.position.x > camera.position.x + 7) {
       birdRef.current.rotation.y = Math.PI;
-    } else if (birdRef.current.position.x < camera.position.x - 8) {
+    } else if (birdRef.current.position.x < camera.position.x - 7) {
       birdRef.current.rotation.y = 0;
     }
     if (birdRef.current.rotation.y === 0) {
       // forward
       birdRef.current.position.x += 0.01;
-      birdRef.current.position.z -= 0.01;
+      birdRef.current.position.z -= 0.005;
     } else {
       // backward
       birdRef.current.position.x -= 0.01;
-      birdRef.current.position.z += 0.01;
+      birdRef.current.position.z += 0.005;
     }
   });
 

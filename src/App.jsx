@@ -3,11 +3,11 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Home from "./pages/Home";
-import Contact from "./components/Contact";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <main className="bg-slate-300/20">
+    <main className="bg-slate-300/20 min-h-screen">
       <Router>
         <Navbar />
         <Routes>

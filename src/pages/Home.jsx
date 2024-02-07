@@ -1,16 +1,31 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Bird from "../models/Bird";
 import Sky from "../models/Sky";
 import Plane from "../models/Plane";
 import Loader from "../components/Loader";
 import HomeInfo from "../components/HomeInfo";
 import Island from "../models/Island";
+import sakura from "../assets/sakura.mp3";
+import { soundoff, soundon } from "../assets/icons";
 
 function Home() {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState();
+  const audioRef = useRef(new Audio(sakura));
+  audioRef.current.volume = 0.4;
+  audioRef.current.loop = true;
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+
+  useEffect(() => {
+    if (isPlayingMusic) {
+      audioRef.current.play();
+    }
+    return () => {
+      audioRef.current.pause();
+    };
+  }, [isPlayingMusic]);
 
   const adjustPlaneForScreenSize = () => {
     let screenScale = null;
@@ -62,7 +77,7 @@ function Home() {
         >
           <Suspense fallback={<Loader />}>
             <directionalLight position={[1, 1, 1]} intensity={0.2} />
-            <ambientLight intensity={0.8} />
+            <ambientLight intensity={1} />
             <hemisphereLight
               skyColor="#b1e1ff"
               groundColor="#000000"
@@ -86,6 +101,18 @@ function Home() {
             />
           </Suspense>
         </Canvas>
+        <div
+          onClick={() => {
+            setIsPlayingMusic(!isPlayingMusic);
+          }}
+          className="absolute bottom-2 left-2 cursor-pointer"
+        >
+          <img
+            className="w-10 h-10 transition-all object-contain"
+            src={!isPlayingMusic ? soundoff : soundon}
+            alt=""
+          />
+        </div>
       </section>
     </>
   );

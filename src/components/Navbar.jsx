@@ -29,6 +29,14 @@ function Navbar() {
           >
             Projects
           </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "text-blue-500 sm:block hidden" : "text-black-500 sm:block hidden"
+            }
+          >
+            Contact
+          </NavLink>
         </nav>
       </header>
     </>

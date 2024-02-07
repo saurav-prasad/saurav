@@ -11,13 +11,14 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
   const islandRef = useRef();
   const lastX = useRef(0);
   const rotationSpeed = useRef(0);
-  const dampingFactor = 0.955;
-
+  let dampingFactor = 0.955;
+  if (isMobile()) {
+    dampingFactor = 0.7;
+  }
   const handlePointerDown = (e) => {
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(true);
-    console.log("down");
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     lastX.current = clientX;
   };
@@ -25,7 +26,6 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
   const handlePointerUP = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    console.log("up");
     setIsRotating(false);
   };
 
@@ -35,26 +35,26 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
     if (isRotating) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       const delta = (clientX - lastX.current) / viewport.width;
-      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
-      lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
-      console.log("move");
-      // isMobile() && setIsRotating(false);
+      if (isMobile()) {
+        islandRef.current.rotation.y += delta * 0.0035 * Math.PI;
+      } else {
+        islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+      }
+      lastX.current = clientX;
     }
   };
 
   const handleKeyDown = (e) => {
     if (e.key === "ArrowLeft") {
-      if (!isRotating) {
-        setIsRotating(true);
-      }
+      if (!isRotating) setIsRotating(true);
       islandRef.current.rotation.y += 0.009 * Math.PI;
+      rotationSpeed.current = 0.0125;
     } else {
       if (e.key === "ArrowRight") {
-        if (!isRotating) {
-          setIsRotating(true);
-        }
+        if (!isRotating) setIsRotating(true);
         islandRef.current.rotation.y -= 0.009 * Math.PI;
+        rotationSpeed.current = -0.0125;
       }
     }
   };
@@ -71,7 +71,6 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
       }
       islandRef.current.rotation.y += rotationSpeed.current;
     }
-    //  else {
     const rotation = islandRef.current.rotation.y;
     /**
      * Normalize the rotation value to ensure it stays within the range [0, 2 * Math.PI].
@@ -109,28 +108,29 @@ function Island({ isRotating, setIsRotating, setCurrentStage, ...props }) {
       default:
         setCurrentStage(null);
     }
-    // }
   });
 
   useEffect(() => {
     const canvas = gl.domElement;
-    canvas.addEventListener("pointerdown", handlePointerDown);
-    canvas.addEventListener("pointerup", handlePointerUP);
-    canvas.addEventListener("pointermove", handlePointerMove);
+    !isMobile() && canvas.addEventListener("pointerdown", handlePointerDown);
+    !isMobile() && canvas.addEventListener("pointerup", handlePointerUP);
+    !isMobile() && canvas.addEventListener("pointermove", handlePointerMove);
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
     canvas.addEventListener("touchmove", handlePointerMove);
     canvas.addEventListener("touchstart", handlePointerDown);
-    canvas.addEventListener("touchend", handlePointerUP);
+    canvas.addEventListener("touchend", handleKeyUp);
     return () => {
-      canvas.removeEventListener("pointerdown", handlePointerDown);
-      canvas.removeEventListener("pointerup", handlePointerUP);
-      canvas.removeEventListener("pointermove", handlePointerMove);
+      !isMobile() &&
+        canvas.removeEventListener("pointerdown", handlePointerDown);
+      !isMobile() && canvas.removeEventListener("pointerup", handlePointerUP);
+      !isMobile() &&
+        canvas.removeEventListener("pointermove", handlePointerMove);
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
       canvas.removeEventListener("touchmove", handlePointerMove);
       canvas.removeEventListener("touchstart", handleKeyDown);
-      canvas.removeEventListener("touchend", handlePointerUP);
+      canvas.removeEventListener("touchend", handleKeyUp);
     };
   }, [gl, handlePointerDown, handlePointerMove, handlePointerUP]);
 

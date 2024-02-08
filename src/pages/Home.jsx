@@ -81,7 +81,7 @@ function Home() {
             <hemisphereLight
               skyColor="#b1e1ff"
               groundColor="#000000"
-              intensity={1}
+              intensity={1.1}
             />
             <Sky isRotating={isRotating} />
             <Bird />
@@ -105,7 +105,7 @@ function Home() {
           onClick={() => {
             setIsPlayingMusic(!isPlayingMusic);
           }}
-          className="absolute bottom-2 left-2 cursor-pointer"
+          className="fixed bottom-2 left-2 cursor-pointer"
         >
           <img
             className="w-10 h-10 transition-all object-contain"

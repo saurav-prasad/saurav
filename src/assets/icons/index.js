@@ -26,7 +26,10 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
-
+import video from './video.svg'
+import server from './server.svg'
+import image from "./image.svg"
+import threejs from './threejs.svg'
 export {
     css,
     express,
@@ -55,5 +58,9 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    video,
+    server,
+    image,
+    threejs
 }

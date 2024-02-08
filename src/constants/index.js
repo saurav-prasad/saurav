@@ -23,29 +23,18 @@ import {
     summiz,
     tailwindcss,
     threads,
-    typescript
+    video,
+    typescript,
+    server,
+    image,
+    threejs
 } from "../assets/icons";
 
 export const skills = [
     {
-        imageUrl: css,
-        name: "CSS",
+        imageUrl: javascript,
+        name: "JavaScript",
         type: "Frontend",
-    },
-    {
-        imageUrl: express,
-        name: "Express",
-        type: "Backend",
-    },
-    {
-        imageUrl: git,
-        name: "Git",
-        type: "Version Control",
-    },
-    {
-        imageUrl: github,
-        name: "GitHub",
-        type: "Version Control",
     },
     {
         imageUrl: html,
@@ -53,8 +42,8 @@ export const skills = [
         type: "Frontend",
     },
     {
-        imageUrl: javascript,
-        name: "JavaScript",
+        imageUrl: css,
+        name: "CSS",
         type: "Frontend",
     },
     {
@@ -63,13 +52,8 @@ export const skills = [
         type: "Database",
     },
     {
-        imageUrl: mui,
-        name: "Material-UI",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nodejs,
-        name: "Node.js",
+        imageUrl: express,
+        name: "Express",
         type: "Backend",
     },
     {
@@ -78,29 +62,54 @@ export const skills = [
         type: "Frontend",
     },
     {
+        imageUrl: nodejs,
+        name: "Node.js",
+        type: "Backend",
+    },
+    {
         imageUrl: redux,
         name: "Redux",
         type: "State Management",
+    },
+    {
+        imageUrl: threejs,
+        name: "Threejs",
+        type: "3d stuffs",
     },
     {
         imageUrl: tailwindcss,
         name: "Tailwind CSS",
         type: "Frontend",
     },
+    {
+        imageUrl: mui,
+        name: "Material-UI",
+        type: "Frontend",
+    },
+    {
+        imageUrl: github,
+        name: "GitHub",
+        type: "Version Control",
+    },
+    {
+        imageUrl: git,
+        name: "Git",
+        type: "Version Control",
+    },
 ];
 
 export const experiences = [
     {
-        title: "React.js Developer",
-        company_name: "Starbucks",
+        title: "Wrote my first code❤️",
+        company_name: 'Embarked on coding with my initial script.',
         icon: starbucks,
         iconBg: "#accbe1",
-        date: "March 2020 - April 2021",
+        date: "~Feburary 2019",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "I started my coding journey when I was just 15.",
+            "I began my coding journey with HTML, considering it as my first coding language.",
+            "I delved into coding out of curiosity, driven by a desire to understand how apps and websites work and to create something similar myself.",
+            "When I started coding, I didn't know that I could even land a job by learning to code.😂",
         ],
     },
     {
@@ -146,63 +155,56 @@ export const experiences = [
 
 export const socialLinks = [
     {
-        name: 'Contact',
-        iconUrl: contact,
-        link: '/contact',
-    },
-    {
         name: 'GitHub',
         iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
+        link: 'https://github.com/saurav-prasad',
     },
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+        link: 'https://www.linkedin.com/in/saurav-prasadd/',
     }
 ];
 
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
-    },
-    {
-        iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
-    },
-    {
-        iconUrl: car,
-        theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
-    },
-    {
         iconUrl: snapgram,
         theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
+        name: 'Full Stack Sociol Media app',
+        description: 'Built a complete sociol media application which is a blend of LinkedIn and Instagram, allowing users to share photos also follow and connect with friends.',
+        link: 'https://socioll.vercel.app',
+        repo: 'https://github.com/saurav-prasad/Sociol'
     },
     {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+        iconUrl: pricewise,
+        theme: 'btn-back-red',
+        name: 'Full Stack Ecommerce app',
+        description: 'Developed a robust full-stack e-commerce application that empowers users to effortlessly add items to their cart and wishlist. Additionally, the application ensures a secure checkout process through an integrated payment gateway.',
+        link: 'https://big-cart.vercel.app/',
+        repo: 'https://github.com/saurav-prasad/big-cart'
     },
     {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
+        iconUrl: video,
+        theme: 'btn-back-green',
+        name: 'Full Stack Netflix clone',
+        description: "Successfully developed a full-stack replica of the renowned video streaming platform 'Netflix.' This comprehensive application allows users to watch videos, maintain a complete history of their watched content, and even add videos to a personalized wishlist.",
+        link: 'https://netflix--saurav.vercel.app/',
+        repo: 'https://github.com/saurav-prasad/Netflix2.0'
+    },
+    {
+        iconUrl: server,
+        theme: 'btn-back-blue',
+        name: 'Backend social media app',
+        description: "Crafted a backend application tailored for constructing various social media platforms. It encompasses all the essential routes needed for seamless integration between the backend and frontend, providing a solid foundation for diverse social media applications.",
+        link: 'https://sociol-backend.vercel.app/',
+        repo: 'https://github.com/saurav-prasad/Sociol-backend'
+    },
+    {
+        iconUrl: image,
+        theme: 'btn-back-orange',
+        name: 'Images repository app',
+        description: "This app houses a diverse collection of photos, providing users with the ability to find any image they desire. Whether you're searching for specific themes, subjects, or simply exploring, this app ensures a comprehensive and easily navigable repository of photos",
+        link: 'https://photo-ki-dukan.vercel.app/',
+        repo: 'https://github.com/saurav-prasad/Photo-ki-Dukan'
+    },
 ];

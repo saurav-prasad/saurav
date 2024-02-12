@@ -18,7 +18,7 @@ function Footer() {
   ];
   return (
     <>
-      <footer className="rounded-lg mt-5 max-w-5xl mx-auto">
+      <footer className="rounded-lg mt-5 max-w-5xl mx-auto pb-6">
         <div className="w-full mx-auto max-w-screen-xl pt-4 px-2 flex items-center justify-between gap-3 flex-wrap">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 flex ">
             © 2023&nbsp;<p className="hover:underline">Saurav Prasad</p>. All

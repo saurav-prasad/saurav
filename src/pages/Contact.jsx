@@ -180,8 +180,10 @@ function Contact() {
           </Canvas>
         </div>
       </section>
-      <hr className="border-slate-20 max-w-5xl mx-auto " />
-      <Footer />
+      <div className="lg:mb-0 mb-4">
+        <hr className="border-slate-20 max-w-5xl mx-auto " />
+        <Footer />
+      </div>
     </>
   );
 }

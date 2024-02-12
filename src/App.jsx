@@ -1,10 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-import Footer from "./components/Footer";
+import { Navbar } from "./components";
+import { About, Contact, Home, Projects } from "./pages";
 
 function App() {
   return (

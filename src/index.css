@@ -21,6 +21,17 @@ body:has(.card[data-color="green"]:hover) {
   background-color: rgb(var(--green-rgb) / 25%);
 }
 
+.bgGradient {
+  background: #c9d6ff9f;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #e2e2e29d, #c9d6ffa8);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #e2e2e2a1, #c9d6ffa1);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
 @layer utilities {
   .max-container {
     @apply max-w-5xl mx-auto sm:p-16 sm:pb-6 pb-6 !pt-[126px] px-8 min-h-[calc(100vh-80px)];

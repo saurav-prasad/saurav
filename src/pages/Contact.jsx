@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useState } from "react";
+import React, { Suspense, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import Fox from "../models/Fox";
@@ -8,11 +8,10 @@ import Alert from "../components/Alert";
 import Footer from "../components/Footer";
 
 function Contact() {
-  const ref = useRef(null);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
   const [form, setForm] = useState({
-    user_name: "",
-    user_email: "",
+    from_name: "",
+    from_email: "",
     message: "",
   });
   const [formLoading, setFormLoading] = useState(false);
@@ -31,6 +30,7 @@ function Contact() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    console.log(e);
     setFormLoading(true);
     setCurrentAnimation("hit");
     try {
@@ -38,18 +38,19 @@ function Contact() {
         import.meta.env.VITE_VERCEL_ENV_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_VERCEL_ENV_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
+          from_name: form.from_name,
           to_name: "Saurav",
-          from_email: form.email,
+          from_email: form.from_email,
           to_email: "sauravprasad2050@gmail.com",
           message: form.message,
+          reply_to: form.from_email,
         },
         import.meta.env.VITE_VERCEL_ENV_EMAILJS_PUBLIC_KEY
       );
       setFormLoading(false);
       setForm({
-        user_name: "",
-        user_email: "",
+        from_name: "",
+        from_email: "",
         message: "",
       });
       showAlert({ text: "Get to you soon!", type: "success" });
@@ -65,7 +66,7 @@ function Contact() {
         user_email: "",
         message: "",
       });
-      showAlert({ text: "I did'nt get that!", type: "danger" });
+      showAlert({ text: "Uho! I did'nt get that!", type: "danger" });
       setTimeout(() => {
         setCurrentAnimation("idle");
         hideAlert();
@@ -102,7 +103,7 @@ function Contact() {
               <input
                 required
                 type="text"
-                name="user_name"
+                name="from_name"
                 className="input"
                 placeholder="Enter your name..."
                 onChange={onChange}
@@ -116,7 +117,7 @@ function Contact() {
               <input
                 required
                 type="email"
-                name="user_email"
+                name="from_email"
                 className="input"
                 placeholder="Enter your email..."
                 onChange={onChange}
@@ -180,8 +181,8 @@ function Contact() {
           </Canvas>
         </div>
       </section>
-      <div className="lg:mb-0 pb-4">
-        <hr className="border-slate-20 max-w-5xl mx-auto " />
+      <div className="lg:pb-0 pb-4">
+        <hr className="border-slate-200 max-w-5xl mx-auto " />
         <Footer />
       </div>
     </>

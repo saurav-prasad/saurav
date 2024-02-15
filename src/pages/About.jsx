@@ -101,11 +101,13 @@ function About() {
           </div>
         </div>
         {/* contact */}
-        <hr className="border-slate-200" />
-        <CTA />
-        <hr className="border-slate-20 mt-12 max-w-5xl mx-auto " />
-        <Footer />
       </section>
+      <div className="pb-4">
+        <hr className="border-slate-200 mt-12 max-w-5xl mx-auto " />
+        <CTA />
+        <hr className="border-slate-200 mt-10 max-w-5xl mx-auto " />
+        <Footer />
+      </div>
     </>
   );
 }

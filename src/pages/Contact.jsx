@@ -182,7 +182,7 @@ function Contact() {
         </div>
       </section>
       <div className="lg:pb-0 pb-4">
-        <hr className="border-slate-200 max-w-5xl mx-auto " />
+        <hr className="hrBorderColor max-w-5xl mx-auto " />
         <Footer />
       </div>
     </>

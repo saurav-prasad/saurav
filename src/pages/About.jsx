@@ -14,7 +14,7 @@ function About() {
       <section className="max-container">
         {/* intro */}
         <h1 className="head-text">
-          Hello there I'am,
+          Hellow there I'am,
           <span className="blue-gradient_text font-semibold drop-shadow">
             {" "}
             Saurav
@@ -24,8 +24,8 @@ function About() {
 
         <div className="mt-5 flex flex-col gap-3 text-slate-500">
           <p>
-            Hello there! I'm a Full Stack developer with a passion for creating
-            awesome and scalable web apps using the MERN stack.
+            A self taught Full Stack developer with a passion for creating
+            immersive and scalable web applications using the MERN stack.
           </p>{" "}
         </div>
         {/* skills */}
@@ -103,9 +103,9 @@ function About() {
         {/* contact */}
       </section>
       <div className="pb-4">
-        <hr className="border-slate-200 mt-12 max-w-5xl mx-auto " />
+        <hr className="hrBorderColor mt-12 max-w-5xl mx-auto " />
         <CTA />
-        <hr className="border-slate-200 mt-10 max-w-5xl mx-auto " />
+        <hr className="hrBorderColor mt-10 max-w-5xl mx-auto " />
         <Footer />
       </div>
     </>

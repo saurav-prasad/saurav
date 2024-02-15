@@ -88,6 +88,10 @@ body:has(.card[data-color="green"]:hover) {
   .cta-text {
     @apply text-black-500 font-extrabold flex-1 text-3xl max-md:text-center;
   }
+
+  .hrBorderColor {
+    @apply border-slate-300
+  }
 }
 
 .glassmorphism {
@@ -192,6 +196,7 @@ body:has(.card[data-color="green"]:hover) {
   box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
     0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
 }
+
 
 /* BtnLoader */
 .BtnLoader {

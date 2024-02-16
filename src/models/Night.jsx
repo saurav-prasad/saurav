@@ -30,7 +30,7 @@ export function Test({ isRotating }) {
   };
 
   useFrame((_, delta) => {
-    skyRef.current.rotation.y -= 0.032 * delta;
+    skyRef.current.rotation.y -= 0.017 * delta;
   });
 
   useEffect(() => {

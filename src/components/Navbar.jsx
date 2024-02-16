@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import { Link, NavLink, useLocation, useParams } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 function Navbar() {
-  const { darkMode } = useSelector((state) => state.themeSlice);
-  const location = useLocation().pathname;
+  const location = useLocation().pathname
+  const {darkMode} = useSelector((state)=>state.themeSlice)
 
   return (
     <>
@@ -22,7 +22,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? "text-blue-500"
-                : darkMode && location === "/"
+                : darkMode && (location === '/')
                 ? "text-white"
                 : "text-black-500"
             }
@@ -34,7 +34,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? "text-blue-500"
-                : darkMode && location === "/"
+                : darkMode && (location === '/')
                 ? "text-white"
                 : "text-black-500"
             }
@@ -44,12 +44,12 @@ function Navbar() {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive
-                ? "text-blue-500"
-                : darkMode && location === "/"
-                ? "text-white"
-                : "text-black-500"
-            }
+            isActive
+              ? "text-blue-500 sm:block hidden"
+              : darkMode && (location === '/')
+              ? "text-white sm:block hidden"
+              : "text-black-500 sm:block hidden"
+          }
           >
             Contact
           </NavLink>

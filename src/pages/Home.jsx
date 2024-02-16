@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Bird from "../models/Bird";
 import Sky from "../models/Sky";
@@ -9,8 +9,17 @@ import HomeInfo from "../components/HomeInfo";
 import Island from "../models/Island";
 import sakura from "../assets/sakura.mp3";
 import { soundoff, soundon } from "../assets/icons";
+import Night from "../models/Night";
+import { useDispatch, useSelector } from "react-redux";
+import { lightMode, nightMode } from "../redux/features/themeSlice";
+import moonon from "../assets/icons/moonon.png";
+import moonoff from "../assets/icons/moonoff.png";
 
 function Home() {
+  const { darkMode } = useSelector((state) => state.themeSlice);
+  const dispatch = useDispatch();
+  console.log(darkMode);
+
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState();
   const audioRef = useRef(new Audio(sakura));
@@ -76,14 +85,37 @@ function Home() {
           camera={{ near: 0.1, far: 1000 }}
         >
           <Suspense fallback={<Loader />}>
-            <directionalLight position={[1, 1, 1]} intensity={0.85} />
-            <ambientLight intensity={1} />
-            <hemisphereLight
-              skyColor="#b1e1ff"
-              groundColor="#000000"
-              intensity={1.1}
-            />
-            <Sky isRotating={isRotating} />
+            {darkMode ? (
+              <>
+                <directionalLight position={[1, 1, 1]} intensity={-0.3} />
+                <spotLight
+                  // position={[-9, 0.1, 1.5]}
+                  position={[-15, 0.1, 1.5]}
+                  intensity={30}
+                  color="#ffffff"
+                  // color="#ff0000"
+                  angle={Math.PI / 4}
+                  distance={100.0}
+                  decay={0.6}
+                  penumbra={0.2}
+                />
+              </>
+            ) : (
+              <>
+                <directionalLight position={[1, 1, 1]} intensity={0.85} />
+                <ambientLight intensity={1} />
+                <hemisphereLight
+                  skyColor="#b1e1ff"
+                  groundColor="#000000"
+                  intensity={1.1}
+                />
+              </>
+            )}
+            {darkMode ? (
+              <Night isRotating={isRotating} />
+            ) : (
+              <Sky isRotating={isRotating} />
+            )}
             <Bird />
             <Island
               scale={islandScale}
@@ -110,6 +142,18 @@ function Home() {
           <img
             className="w-10 h-10 transition-all object-contain"
             src={!isPlayingMusic ? soundoff : soundon}
+            alt=""
+          />
+        </div>
+        <div
+          onClick={() => {
+            dispatch(darkMode ? lightMode() : nightMode());
+          }}
+          className="bg-[#5d50f5] p-3 rounded-full fixed bottom-2 right-2 cursor-pointer"
+        >
+          <img
+            className="w-5 h-5 transition-all object-contain invert"
+            src={!darkMode ? moonoff : moonon}
             alt=""
           />
         </div>

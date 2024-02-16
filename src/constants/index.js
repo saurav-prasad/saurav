@@ -1,4 +1,3 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
 import target from '../assets/images/target.png'
 import rocket from '../assets/images/rocket.png'
 import graduation_hat from '../assets/images/graduate-hat.png'

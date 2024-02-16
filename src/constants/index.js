@@ -1,4 +1,8 @@
 import { meta, shopify, starbucks, tesla } from "../assets/images";
+import target from '../assets/images/target.png'
+import rocket from '../assets/images/rocket.png'
+import graduation_hat from '../assets/images/graduate-hat.png'
+import way from '../assets/images/way.png'
 import {
     car,
     contact,
@@ -101,67 +105,53 @@ export const skills = [
 export const experiences = [
     {
         title: "Wrote my first code❤️",
-        company_name: 'Embarked on coding with my initial script.',
-        icon: starbucks,
-        iconBg: "#accbe1",
+        title_name: 'Embarked on coding with my initial script',
+        icon: rocket,
+        iconBg: "#629ed3",
         date: "~Feb 2019",
         points: [
             "I started my coding journey when I was just 15.",
-            "I began my coding journey with HTML, considering it as my first coding language.",
             "I delved into coding out of curiosity, driven by a desire to understand how apps and websites work and to create something similar myself.",
-            "When I started coding, I didn't know that I could even land a job by learning to code.😂",
+            "I began my coding journey with HTML, considering it as my first coding language.",
+            "When I started coding, I didn't know that I could even land a job by learning to code.😂😂",
         ],
     },
     {
-        title: "Wrote my first code❤️",
-        company_name: 'Embarked on coding with my initial script.',
-        icon: starbucks,
-        iconBg: "#accbe1",
-        date: "~Feb 2019",
-        points: [
-            "I started my coding journey when I was just 15.",
-            "I began my coding journey with HTML, considering it as my first coding language.",
-            "I delved into coding out of curiosity, driven by a desire to understand how apps and websites work and to create something similar myself.",
-            "When I started coding, I didn't know that I could even land a job by learning to code.😂",
-        ],
-    },
-    {
-        title: "Enrolled in college.",
-        company_name: "Opted for a B.S.C. in Computer Science.",
-        icon: tesla,
+        title: "Enrolled into college",
+        title_name: "Opted for a B.S.C. in Computer Science",
+        icon: graduation_hat,
         iconBg: "#fbc3bc",
         date: "2021",
         points: [
             "I have enrolled at Surya Sen College, University of North Bengal.",
             "I have chosen to pursue a B.S.C. in Computer Science to delve into and explore various aspects of computer science and programming.",
-            "In addition to programming and computer science, I have actively engaged in opportunities to enhance my leadership and communication skills, public speaking",
+            "In addition to programming and computer science, I have actively engaged in opportunities to enhance my leadership and communication skills, public speaking.",
             "I have also learned to establish a good connections with peoples.",
         ],
     },
     {
-        title: "Started my FullStack journey",
-        company_name: "Shopify",
-        icon: shopify,
-        iconBg: "#b7e4c7",
+        title: "I embarked on my FullStack journey",
+        title_name: "I initiated with the  MERN stack",
+        icon: target,
+        iconBg: "#fae3e3",
         date: "2022",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "I have a strong intrest for creating websites and working on UI designs.",
+            "I learned JavaScript because it encompasses a wide range of cool and interesting libraries and frameworks, allowing me to build almost anything with this versatile language.",
+            "And that's how I chose the MERN stack.",
+            "JavaScript also enables the creation of native mobile apps through React Native.",
         ],
     },
     {
-        title: "Full stack Developer",
-        company_name: "Meta",
-        icon: meta,
-        iconBg: "#a2d2ff",
-        date: "Jan 2023 - Present",
+        title: "On the way...",
+        title_name: "Developing multiple end-to-end full-stack projects",
+        icon: way,
+        iconBg: "#c4ffff",
+        // date: "2022",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "I have worked on many different project on varying niches.",
+            "Acquired knowledge in various tools and technologies.",
+            "I also worked on integrating the payment gateways.",
         ],
     },
 ];

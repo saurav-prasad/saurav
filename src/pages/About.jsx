@@ -32,10 +32,10 @@ function About() {
         <div className="py-10 flex flex-col">
           <h3 className="subhead-text">My Skills</h3>
           <div className="mt-16 flex flex-wrap gap-12">
-            {skills.map((skill) => (
-              <div className="block-container w-20 h-20">
+            {skills.map((skill, index) => (
+              <div key={index} className="block-container w-20 h-20">
                 <div className="btn-back rounded-xl" />
-                <div className="btn-front rounded-xl flex justify-center items-center">
+                <div className="btn-front-about rounded-xl flex justify-center items-center">
                   <img
                     className="w-1/2 h-1/2 object-contain"
                     src={skill.imageUrl}
@@ -63,7 +63,7 @@ function About() {
                     <div className="flex justify-center items-center w-full h-full">
                       <img
                         src={experience.icon}
-                        alt={experience.company_name}
+                        alt={experience.title_name}
                         className="w-[60%] h-[60%] object-contain"
                       />
                     </div>

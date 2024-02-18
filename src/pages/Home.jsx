@@ -18,7 +18,6 @@ import moonoff from "../assets/icons/moonoff.png";
 function Home() {
   const { darkMode } = useSelector((state) => state.themeSlice);
   const dispatch = useDispatch();
-  console.log(darkMode);
 
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState();

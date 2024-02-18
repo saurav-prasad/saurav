@@ -148,7 +148,7 @@ export const experiences = [
         iconBg: "#c4ffff",
         // date: "2022",
         points: [
-            "I have worked on many different project on varying niches.",
+            "I have been working on many different project on varying niches.",
             "Acquired knowledge in various tools and technologies.",
             "I also worked on integrating the payment gateways.",
         ],
@@ -170,20 +170,20 @@ export const socialLinks = [
 
 export const projects = [
     {
+        iconUrl: image,
+        theme: 'btn-back-orange',
+        name: 'Images repository app',
+        description: "This app houses a diverse collection of photos, providing users with the ability to find any image they desire. Whether you're searching for specific themes, subjects, or simply exploring, this app ensures a comprehensive and easily navigable repository of photos",
+        link: 'https://photo-ki-dukan.vercel.app/',
+        repo: 'https://github.com/saurav-prasad/Photo-ki-Dukan'
+    },
+    {
         iconUrl: snapgram,
         theme: 'btn-back-pink',
         name: 'Full Stack Sociol Media app',
         description: 'Built a complete sociol media application which is a blend of LinkedIn and Instagram, allowing users to share photos also follow and connect with friends.',
         link: 'https://socioll.vercel.app',
         repo: 'https://github.com/saurav-prasad/Sociol'
-    },
-    {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Full Stack Ecommerce app',
-        description: 'Developed a robust full-stack e-commerce application that empowers users to effortlessly add items to their cart and wishlist. Additionally, the application ensures a secure checkout process through an integrated payment gateway.',
-        link: 'https://big-cart.vercel.app/',
-        repo: 'https://github.com/saurav-prasad/big-cart'
     },
     {
         iconUrl: video,
@@ -194,19 +194,19 @@ export const projects = [
         repo: 'https://github.com/saurav-prasad/Netflix2.0'
     },
     {
+        iconUrl: pricewise,
+        theme: 'btn-back-red',
+        name: 'Full Stack Ecommerce app',
+        description: 'Developed a robust full-stack e-commerce application that empowers users to effortlessly add items to their cart and wishlist. Additionally, the application ensures a secure checkout process through an integrated payment gateway.',
+        link: 'https://big-cart.vercel.app/',
+        repo: 'https://github.com/saurav-prasad/big-cart'
+    },
+    {
         iconUrl: server,
         theme: 'btn-back-blue',
         name: 'Backend social media app',
         description: "Crafted a backend application tailored for constructing various social media platforms. It encompasses all the essential routes needed for seamless integration between the backend and frontend, providing a solid foundation for diverse social media applications.",
         link: 'https://sociol-backend.vercel.app/',
         repo: 'https://github.com/saurav-prasad/Sociol-backend'
-    },
-    {
-        iconUrl: image,
-        theme: 'btn-back-orange',
-        name: 'Images repository app',
-        description: "This app houses a diverse collection of photos, providing users with the ability to find any image they desire. Whether you're searching for specific themes, subjects, or simply exploring, this app ensures a comprehensive and easily navigable repository of photos",
-        link: 'https://photo-ki-dukan.vercel.app/',
-        repo: 'https://github.com/saurav-prasad/Photo-ki-Dukan'
     },
 ];

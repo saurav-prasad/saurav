@@ -30,7 +30,7 @@ function About() {
         </div>
         {/* skills */}
         <div className="py-10 flex flex-col">
-          <h3 className="subhead-text">My Skills</h3>
+          <h3 className="subhead-text">My Skill ⚒️</h3>
           <div className="mt-16 flex flex-wrap gap-12">
             {skills.map((skill, index) => (
               <div key={index} className="block-container w-20 h-20">
@@ -49,9 +49,13 @@ function About() {
 
         {/* exp */}
         <div className="py-16">
-          <h1 className="subhead-text">My coding journey</h1>
+          <h1 className="subhead-text">My coding journey 🏇</h1>
           <div className="mt-5 flex flex-col gap-3 text-slate-500">
-            <p></p>
+            <p>
+              I've worked on variety of web applications, leveling up my skills
+              and learinig up new technologies.
+              <br className="sm:block hidden" /> Here's the breakdown:
+            </p>
           </div>
           <div className="mt-12 flex">
             <VerticalTimeline>

@@ -5,7 +5,7 @@ function Alert({ type, text, show }) {
   return (
     <>
       <div
-        className={`absolute top-5 w-full z-20 flex justify-center items-center transition-all ${
+        className={`fixed top-5 w-full z-20 flex justify-center items-center transition-all ${
           show ? "translate-y-[0%]" : "translate-y-[-500%]"
         }`}
       >

@@ -3,10 +3,8 @@ import rocket from '../assets/images/rocket.png'
 import graduation_hat from '../assets/images/graduate-hat.png'
 import way from '../assets/images/way.png'
 import {
-    car,
     contact,
     css,
-    estate,
     express,
     git,
     github,
@@ -14,23 +12,18 @@ import {
     javascript,
     linkedin,
     mongodb,
-    motion,
     mui,
-    nextjs,
     nodejs,
     pricewise,
     react,
     redux,
-    sass,
     snapgram,
-    summiz,
     tailwindcss,
-    threads,
     video,
-    typescript,
     server,
     image,
-    threejs
+    threejs,
+    gmail
 } from "../assets/icons";
 
 export const skills = [
@@ -155,17 +148,27 @@ export const experiences = [
     },
 ];
 
-export const socialLinks = [
+export const socialLink = [
     {
-        name: 'GitHub',
-        iconUrl: github,
-        link: 'https://github.com/saurav-prasad',
+        name: 'Phone',
+        link: "tel:+91-9064007452",
+        img: contact
     },
     {
-        name: 'LinkedIn',
-        iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/saurav-prasadd/',
-    }
+        name: 'Gmail',
+        link: "mailto:sauravprasad2050@gmail.com",
+        img: gmail
+    },
+    {
+        name: "LinkedIn",
+        link: "https://www.linkedin.com/in/saurav-prasadd/",
+        img: linkedin,
+    },
+    {
+        name: "GitHub",
+        link: "https://github.com/saurav-prasad",
+        img: github,
+    },
 ];
 
 export const projects = [
@@ -206,7 +209,6 @@ export const projects = [
         theme: 'btn-back-blue',
         name: 'Backend social media app',
         description: "Crafted a backend application tailored for constructing various social media platforms. It encompasses all the essential routes needed for seamless integration between the backend and frontend, providing a solid foundation for diverse social media applications.",
-        link: 'https://sociol-backend.vercel.app/',
         repo: 'https://github.com/saurav-prasad/Sociol-backend'
     },
 ];

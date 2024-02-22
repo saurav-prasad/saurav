@@ -47,24 +47,26 @@ function Projects() {
                 </h4>
                 <p className="text-slate-500">{project.description}</p>
                 <div className="flex items-center gap-4">
+                  {project.link && (
+                    <div className="mt-5 flex items-center gap-2 font-poppins">
+                      <Link
+                        to={project.link}
+                        target="_blank"
+                        rel="noopener noreferre"
+                        className=" font-semibold text-blue-600"
+                      >
+                        Live Link
+                      </Link>
+                      <img
+                        className="w-4 h-4 object-contain"
+                        src={arrow}
+                        alt=""
+                      />
+                    </div>
+                  )}
                   <div className="mt-5 flex items-center gap-2 font-poppins">
                     <Link
-                      to={project.link}
-                      target="_blank"
-                      rel="noopener noreferre"
-                      className=" font-semibold text-blue-600"
-                    >
-                      Live Link
-                    </Link>
-                    <img
-                      className="w-4 h-4 object-contain"
-                      src={arrow}
-                      alt=""
-                    />
-                  </div>
-                  <div className="mt-5 flex items-center gap-2 font-poppins">
-                    <Link
-                      to={project.repo}
+                      to={project?.repo}
                       target="_blank"
                       rel="noopener noreferre"
                       className=" font-semibold text-blue-600"

@@ -3,26 +3,18 @@ import { Link } from "react-router-dom";
 import { github, linkedin } from "../assets/icons";
 import gmail from "../assets/icons/gmail.svg";
 import resume from "../assets/doc/resume.pdf";
+import { socialLink } from "../constants";
 function Footer() {
-  const icons = [
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/saurav-prasadd/",
-      img: linkedin,
-    },
-    {
-      name: "GitHub",
-      link: "https://github.com/saurav-prasad",
-      img: github,
-    },
-  ];
   return (
     <>
       <footer className="rounded-lg mt-5 max-w-5xl mx-auto">
         <div className="w-full mx-auto max-w-screen-xl pt-4 px-2 flex items-center justify-between gap-3 flex-wrap">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 flex ">
-            © 2023&nbsp;<p className="hover:underline">Saurav Prasad</p>. All
-            Rights Reserved.
+            © 2024&nbsp;
+            <p className="hover:underline text-gray-800 font-bold">
+              Saurav Prasad
+            </p>
+            . All Rights Reserved.
           </span>
           <div className="flex items-center justify-center flex-wrap gap-5">
             <a
@@ -38,10 +30,10 @@ function Footer() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-file-text"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-file-text"
               >
                 <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
                 <path d="M14 2v4a2 2 0 0 0 2 2h4" />
@@ -50,10 +42,7 @@ function Footer() {
                 <path d="M16 17H8" />
               </svg>
             </a>
-            <Link to="mailto:sauravprasad2050@gmail.com">
-              <img className="w-7 h-7 rounded" src={gmail} alt="gmail" />
-            </Link>
-            {icons.map((icon, index) => (
+            {socialLink.map((icon, index) => (
               <Link
                 key={`${icon.name}-${index}`}
                 to={icon.link}

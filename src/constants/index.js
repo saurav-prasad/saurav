@@ -139,7 +139,7 @@ export const experiences = [
         title_name: "Developing multiple end-to-end full-stack projects",
         icon: way,
         iconBg: "#c4ffff",
-        // date: "2022",
+        date: "~today",
         points: [
             "I have been working on many different project on varying niches.",
             "Acquired knowledge in various tools and technologies.",

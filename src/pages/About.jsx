@@ -37,7 +37,9 @@ function About() {
                 <div className="btn-back rounded-xl" />
                 <div className="btn-front-about rounded-xl flex justify-center items-center">
                   <img
-                    className="w-1/2 h-1/2 object-contain"
+                    className={`w-1/2 h-1/2 object-contain ${
+                      skill.isInvert && "invert"
+                    }`}
                     src={skill.imageUrl}
                     alt={skill.name}
                   />

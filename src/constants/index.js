@@ -25,8 +25,8 @@ import {
     threejs,
     gmail,
     whiteBoard,
-    chat
-
+    chat,
+    socketio
 } from "../assets/icons";
 
 export const skills = [
@@ -64,6 +64,12 @@ export const skills = [
         imageUrl: nodejs,
         name: "Node.js",
         type: "Backend",
+    },
+    {
+        imageUrl: socketio,
+        name: "Socket.io",
+        type: "Backend",
+        isInvert:true,
     },
     {
         imageUrl: redux,
@@ -116,7 +122,7 @@ export const experiences = [
         title_name: "Opted for a B.S.C. in Computer Science",
         icon: graduation_hat,
         iconBg: "#fbc3bc",
-        date: "2021",
+        date: "~2021",
         points: [
             "I have enrolled at Surya Sen College, University of North Bengal.",
             "I have chosen to pursue a B.S.C. in Computer Science to delve into and explore various aspects of computer science and programming.",
@@ -129,7 +135,7 @@ export const experiences = [
         title_name: "I initiated with the  MERN stack",
         icon: target,
         iconBg: "#fae3e3",
-        date: "2022",
+        date: "~2022",
         points: [
             "I have a strong intrest for creating websites and working on UI designs.",
             "I learned JavaScript because it encompasses a wide range of cool and interesting libraries and frameworks, allowing me to build almost anything with this versatile language.",
@@ -142,11 +148,12 @@ export const experiences = [
         title_name: "Developing multiple end-to-end full-stack projects",
         icon: way,
         iconBg: "#c4ffff",
-        // date: "2022",
+        date: "~today",
         points: [
-            "I have been working on many different project on varying niches.",
+            "I have been working on various different project on varying niches.",
             "Acquired knowledge in various tools and technologies.",
-            "I also worked on integrating the payment gateways.",
+            "I also worked on the payment gateway integrations.",
+            "I also worked on real-time communication/collaboration apps.",
         ],
     },
 ];

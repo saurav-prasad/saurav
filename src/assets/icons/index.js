@@ -24,6 +24,8 @@ import threejs from './threejs.svg'
 import gmail from './gmail.svg'
 import whiteBoard from './w-board.svg'
 import chat from './message.svg'
+import socketio from './socketio.svg'
+
 export {
     css,
     express,
@@ -50,5 +52,6 @@ export {
     threejs,
     gmail,
     whiteBoard,
-    chat
+    chat,
+    socketio
 }

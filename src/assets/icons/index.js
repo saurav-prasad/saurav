@@ -22,6 +22,8 @@ import server from './server.svg'
 import image from "./image.svg"
 import threejs from './threejs.svg'
 import gmail from './gmail.svg'
+import whiteBoard from './w-board.svg'
+import chat from './message.svg'
 export {
     css,
     express,
@@ -46,5 +48,7 @@ export {
     server,
     image,
     threejs,
-    gmail
+    gmail,
+    whiteBoard,
+    chat
 }

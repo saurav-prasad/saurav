@@ -153,13 +153,16 @@ body:has(.card[data-color="green"]:hover) {
   background: linear-gradient(135deg, #e81cff -20%, #40c9ff 120%);
 }
 
-.block-container .btn-back-yellow {
+.block-container .btn-back-fuschia {
   /* background: linear-gradient(135deg, #ff9e3a -20%, #ff0808 120%); */
-  background: linear-gradient(135deg, #16f584 -20%, #12a2df 120%);
+  background: linear-gradient(135deg, #7c86ff -20%, #00d3f3 120%);
 }
 
 .block-container .btn-back-black {
   background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
+}
+.block-container .btn-back-purple {
+  background: linear-gradient(135deg, #e60076 -20%, #dab2ff 120%);
 }
 
 .block-container .btn-front {

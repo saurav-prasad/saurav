@@ -37,7 +37,9 @@ function Projects() {
                   <img
                     src={project.iconUrl}
                     alt={"project icon"}
-                    className="w-1/2 h-1/2 object-contain "
+                    className={`w-1/2 h-1/2 object-contain ${
+                      project?.isInvert && "invert"
+                    }`}
                   />
                 </div>
               </div>

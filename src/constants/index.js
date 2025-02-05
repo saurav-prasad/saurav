@@ -1,7 +1,6 @@
 import target from '../assets/images/target.png'
 import rocket from '../assets/images/rocket.png'
 import graduation_hat from '../assets/images/graduate-hat.png'
-import chat from '../assets/icons/chat.png'
 import way from '../assets/images/way.png'
 import {
     contact,
@@ -24,7 +23,10 @@ import {
     server,
     image,
     threejs,
-    gmail
+    gmail,
+    whiteBoard,
+    chat
+
 } from "../assets/icons";
 
 export const skills = [
@@ -174,9 +176,19 @@ export const socialLink = [
 
 export const projects = [
     {
+        iconUrl: whiteBoard,
+        isInvert: true,
+        theme: 'btn-back-purple',
+        name: 'Real-time Collabortion App',
+        description: "Introducing PixlPlay – a full-stack, real-time collaborative whiteboard app designed to revolutionize remote teamwork and creativity! 🚀 With features like multi-user simultaneous drawing, infinite canvas space, cloud saving, and smart user invitations, PixlPlay offers everything you need for seamless collaboration.",
+        link: 'https://pixlplay.vercel.app/',
+        repo: 'https://github.com/saurav-prasad/pixlplay'
+    },
+    {
         iconUrl: chat,
-        theme: 'btn-back-yellow',
-        name: 'Real-time Chatting App',
+        isInvert:true,
+        theme: 'btn-back-fuschia',
+        name: 'Real-time Messaging App',
         description: "Engineered a full-stack chat application, Chattila, incorporating features inspired by WhatsApp along with custom functionalities, such as real-time messaging with Socket.io for instant communication. Integrated AI-driven chat functionality to enhance user experience and smart conversational assistance.",
         link: 'https://chattila.vercel.app/',
         repo: 'https://github.com/saurav-prasad/chattila'

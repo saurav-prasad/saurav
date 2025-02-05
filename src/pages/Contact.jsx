@@ -6,6 +6,8 @@ import Loader from "../components/Loader";
 import useAlert from "../hooks/useAlert";
 import Alert from "../components/Alert";
 import Footer from "../components/Footer";
+import LoaderTruck from "../components/LoaderTruck";
+import LoaderColorful from "../components/LoaderColorful";
 
 function Contact() {
   const [currentAnimation, setCurrentAnimation] = useState("idle");
@@ -170,7 +172,7 @@ function Contact() {
               intensity={2}
             />
 
-            <Suspense fallback={<Loader />}>
+            <Suspense fallback={<LoaderColorful />}>
               <Fox
                 currentAnimation={currentAnimation}
                 position={[0.1, 0.35, 0]}

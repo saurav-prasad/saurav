@@ -14,8 +14,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { lightMode, nightMode } from "../redux/features/themeSlice";
 import moonon from "../assets/icons/moonon.png";
 import moonoff from "../assets/icons/moonoff.png";
+import Loader2 from "../components/LoaderTruck";
+import LoaderTruck from "../components/LoaderTruck";
 
-function Home({setIsPlayingMusic,isPlayingMusic}) {
+function Home({ setIsPlayingMusic, isPlayingMusic }) {
   const { darkMode } = useSelector((state) => state.themeSlice);
   const dispatch = useDispatch();
 
@@ -83,7 +85,7 @@ function Home({setIsPlayingMusic,isPlayingMusic}) {
           }`}
           camera={{ near: 0.1, far: 1000 }}
         >
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={<LoaderTruck />}>
             {darkMode ? (
               <>
                 <directionalLight position={[1, 1, 1]} intensity={-0.3} />
